@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: #9c27b0;
+    font-size: 24px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #9c27b0;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.banner {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.banner h2 {
+    font-size: 50px;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+#joueurs {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.player-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.player-card {
+    width: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.player-card::before,
+.player-card::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.8), rgba(0, 191, 255, 0.8));
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.3s;
+}
+
+.player-card::before {
+    top: -20px;
+    left: -20px;
+    transform: scale(0.5);
+}
+
+.player-card::after {
+    bottom: -20px;
+    right: -20px;
+    transform: scale(0.5);
+}
+
+.player-card:hover {
+    transform: scale(1.1);
+}
+
+.player-card:hover::before {
+    opacity: 1;
+    transform: scale(1.5) translate(-30px, -30px) rotate(15deg);
+}
+
+.player-card:hover::after {
+    opacity: 1;
+    transform: scale(1.5) translate(30px, 30px) rotate(-15deg);
+}
+
+.player-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+}
+
+footer nav a {
+    display: inline-block;
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+footer nav a:hover {
+    color: #9c27b0;
+}
